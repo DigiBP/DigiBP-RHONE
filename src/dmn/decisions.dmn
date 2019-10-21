@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0f955te" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
+  <decision id="decision_database_lock" name="Database Lock">
+    <extensionElements>
+      <biodi:bounds x="341" y="99" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Patients">
+        <inputExpression id="inputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="boolean" />
+      <rule id="DecisionRule_1ez1qwz">
+        <inputEntry id="UnaryTests_1qztsuj">
+          <text>&gt;=$required_patients</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1943bgs">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t7qhry">
+        <inputEntry id="UnaryTests_0hwluuq">
+          <text>&lt;$required_patients</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0glkww0">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="decision_inclusion_eclusion" name="Inclusion/Exclusion Eligibility">
+    <extensionElements>
+      <biodi:bounds x="341" y="203" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="DecisionTable_06t7b7h">
+      <input id="InputClause_1et0jln">
+        <inputExpression id="LiteralExpression_1fabtak" typeRef="string" />
+      </input>
+      <output id="OutputClause_025gh1b" typeRef="string" />
+      <rule id="DecisionRule_1l8zbl8">
+        <inputEntry id="UnaryTests_131escp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00djqwn">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
