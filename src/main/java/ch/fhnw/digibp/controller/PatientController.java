@@ -21,4 +21,9 @@ public class PatientController {
         return patientService.createPatientInstance(patient);
     }
 
+    @PostMapping("/hi")
+    public void getIt(@RequestBody Patient patient){
+        System.out.println(patient.getUuid());
+    }
+
 }

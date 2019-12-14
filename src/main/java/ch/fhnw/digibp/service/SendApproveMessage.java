@@ -31,6 +31,7 @@ public class SendApproveMessage implements JavaDelegate {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        System.out.println(delegateExecution.getVariable("uuid"));
         String JO = "{\"uuid\" : " + delegateExecution.getVariable("uuid") + "}";
         HttpEntity<String> request = new HttpEntity<>(JO, headers);
         restTemplate.postForEntity(uri, request, String.class);
