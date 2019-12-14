@@ -22,7 +22,7 @@ public class CamundaService {
     public String createPatient(Patient patient){
         Map<String, Object> processVars = new HashMap<>();
         processVars.put("age", patient.getAge());
-        processVars.put("uuid", patient.getAge());
+        processVars.put("uuid", patient.getUuid());
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("registerationProcess", processVars);
         return processInstance.getId();
     }
