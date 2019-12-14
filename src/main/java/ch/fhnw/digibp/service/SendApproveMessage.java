@@ -27,13 +27,26 @@ public class SendApproveMessage implements JavaDelegate {
     public void execute(DelegateExecution delegateExecution) throws Exception {
 
         final String baseUrl = "https://www.pactd.ch/api/registration/approve";
+
         URI uri = new URI(baseUrl);
+
+        String requestJson = "{\"queriedQuestion\":\"Is there pain in your hand?\"}";
+
         RestTemplate restTemplate = new RestTemplate();
+
         HttpHeaders headers = new HttpHeaders();
+
         headers.setContentType(MediaType.APPLICATION_JSON);
-        System.out.println(delegateExecution.getVariable("uuid"));
-        String JO = "{\"uuid\" : " + delegateExecution.getVariable("uuid") + "}";
-        HttpEntity<String> request = new HttpEntity<>(JO, headers);
-        restTemplate.postForEntity(uri, request, String.class);
+
+        System.out.println(requestJson);
+
+        //String JO = "{\"uuid\" : " + delegateExecution.getVariable("uuid") + "}";
+
+        HttpEntity<String> request = new HttpEntity<String>(requestJson, headers);
+
+        ResponseEntity<String> response = restTemplate.postForEntity(uri, request, String.class);
+
+        System.out.println(response);
+
     }
 }
