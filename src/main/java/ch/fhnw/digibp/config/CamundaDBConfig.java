@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-@Configuration
-@EnableTransactionManagement
+//@Configuration
+//@EnableTransactionManagement
 public class CamundaDBConfig {
 
-    @Value("${camunda.datasource.driver}")
+ /*   @Value("${camunda.datasource.driver}")
     private String driver;
     @Value("${camunda.datasource.Url}")
     private String Url;
@@ -22,7 +22,6 @@ public class CamundaDBConfig {
     private String Username;
     @Value("${camunda.datasource.Password}")
     private String Password;
-
     @Primary
     @Bean(name = "dataSource")
     public DataSource dataSource() {
@@ -32,5 +31,5 @@ public class CamundaDBConfig {
         dataSource.setUsername(Username);
         dataSource.setPassword(Password);
         return dataSource;
-    }
+    }*/
 }
