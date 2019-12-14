@@ -7,7 +7,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import spinjar.com.minidev.json.JSONObject;
 
 import java.net.URI;
 
@@ -21,7 +20,7 @@ public class SendDeclinedMessage implements JavaDelegate {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        String JO = "{\"uuid\" : " + delegateExecution.getVariable("uuid") + "}";
+        String JO = "{\"uuid\" : \"" + delegateExecution.getVariable("uuid") + "\"}";
         HttpEntity<String> request = new HttpEntity<>(JO, headers);
         restTemplate.postForEntity(uri, request, String.class);
     }
