@@ -30,7 +30,7 @@ public class SendApproveMessage implements JavaDelegate {
 
         URI uri = new URI(baseUrl);
 
-        String requestJson = "{\"queriedQuestion\":\"Is there pain in your hand?\"}";
+        String requestJson = "{\"Test\"}";
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -38,15 +38,13 @@ public class SendApproveMessage implements JavaDelegate {
 
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        System.out.println(requestJson);
+        System.out.println(delegateExecution.getVariable("uuid"));
 
         //String JO = "{\"uuid\" : " + delegateExecution.getVariable("uuid") + "}";
 
         HttpEntity<String> request = new HttpEntity<String>(requestJson, headers);
 
-        ResponseEntity<String> response = restTemplate.postForEntity(uri, request, String.class);
-
-        System.out.println(response);
+        restTemplate.postForEntity(uri, request, String.class);
 
     }
 }
