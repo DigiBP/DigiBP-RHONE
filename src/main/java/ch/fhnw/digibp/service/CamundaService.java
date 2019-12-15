@@ -32,7 +32,7 @@ public class CamundaService {
         Map<String, Object> processVars = new HashMap<>();
         processVars.put("uuid", surveyModel.getUuid());
         processVars.put("survey_uuid", surveyModel.getSurvey_uuid());
-        processVars.put("survey_score", surveyModel.getScore());
+        processVars.put("survey_score", surveyModel.getSurvey_score());
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("Clinical_Trial_Survey_Validation", processVars);
         return processInstance.getId();
     }

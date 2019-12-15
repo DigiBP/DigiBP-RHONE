@@ -4,7 +4,7 @@ public class SurveyModel {
     private String uuid;
     private String survey_uuid;
     @javax.persistence.Transient
-    private int score;
+    private int survey_score;
 
     public SurveyModel() {
     }
@@ -12,7 +12,7 @@ public class SurveyModel {
     public SurveyModel(String uuid, String survey_uuid, int score) {
         this.uuid = uuid;
         this.survey_uuid = survey_uuid;
-        this.score = score;
+        this.survey_score = score;
     }
 
     public String getUuid() {
@@ -31,11 +31,11 @@ public class SurveyModel {
         this.survey_uuid = survey_uuid;
     }
 
-    public int getScore() {
-        return score;
+    public int getSurvey_score() {
+        return survey_score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setSurvey_score(int survey_score) {
+        this.survey_score = survey_score;
     }
 }
