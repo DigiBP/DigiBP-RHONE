@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_11w6ox9" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.2.1">
+  <decision id="Survey_Decision" name="Clinical Trial Survey Validation">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="survey_score">
+        <inputExpression id="inputExpression_1" typeRef="integer">
+          <text>survey_score</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="result" name="result" typeRef="string" />
+      <rule id="DecisionRule_08nx6ef">
+        <inputEntry id="UnaryTests_0kyo65j">
+          <text>&lt; 40</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nr0pph">
+          <text>"decline"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a1syi0">
+        <inputEntry id="UnaryTests_16gu65e">
+          <text>[40..56]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gab7uh">
+          <text>"retake"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eure0f">
+        <inputEntry id="UnaryTests_0zmn77j">
+          <text>&gt; 56</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mrb20m">
+          <text>"accept"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

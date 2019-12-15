@@ -3,7 +3,7 @@
   <bpmn:collaboration id="registeration">
     <bpmn:participant id="Participant_1om252u" name="Climical Trial Mnagement System (CTMS)" processRef="registerationProcess" />
   </bpmn:collaboration>
-  <bpmn:process id="registerationProcess" name="registeration" isExecutable="true">
+  <bpmn:process id="registerationProcess" name="Clinical Trial Registration" isExecutable="true">
     <bpmn:laneSet id="LaneSet_0xij60m" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_084totj">
       <bpmn:incoming>SequenceFlow_1vnh5h4</bpmn:incoming>

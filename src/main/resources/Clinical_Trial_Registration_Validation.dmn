@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_1u688yt" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.2.1">
-  <decision id="validate-registration" name="validate-registration-Decision">
+  <decision id="validate-registration" name="Clinical Trial Registration Validation">
     <decisionTable id="decisionTable_1" hitPolicy="FIRST">
       <input id="input_1" label="age">
         <inputExpression id="inputExpression_1" typeRef="integer">
